@@ -47,7 +47,7 @@ function Navbar() {
         <CiSearch onClick={() => setShowSearch(!showSearch)} size={22} className="cursor-pointer hover:text-black" />
 
         <div className="group relative">
-          <CiUser size={22} className="cursor-pointer hover:text-black" />
+          <Link to={'/login'}><CiUser size={22} className="cursor-pointer hover:text-black" /></Link>
 
           {/* invisible pt-4 bridge gap ko cover karta hai taake hover na toote */}
           <div className="hidden group-hover:block absolute right-0 pt-4 z-10">
