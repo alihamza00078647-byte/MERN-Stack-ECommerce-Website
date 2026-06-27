@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Inter;
+}
+
+.links-color{
+    color: white;
+    text-decoration: none;
+}
+
+.underline{
+    border-bottom: 2px solid black;
+}
+
+.remove-underline{
+    text-decoration: none;
+}
+
+@media (max-width : 640px) {
+    a.active {
+        background-color: black;
+        color: white;
+    }
+}
+
+.background-image{
+    background-image: url(./assets/hero_img.png);
+    background-size: cover;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.custom-border {
+    border: 1px solid gray;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
