@@ -34,16 +34,14 @@ const addProduct = async (req, res, next) => {
             category,
             subCategory
         }
-
-        console.log(productData);
+        
+        // console.log(productData);
 
         const Product = new product(productData);
         await Product.save();
         // console.log(name, description, price, sizes, bestseller, category, subCategory);
 
-
         res.json({success: true, message : "Product Added Successfully"})
-        
         
     } catch (err) {
         console.log(err);
@@ -55,7 +53,13 @@ const addProduct = async (req, res, next) => {
 
 // function for List Product
 const listProduct = async (req, res, next) => {
-    
+    try {
+        const productfound = await product.find({});
+        res.json({success: true, productfound:productfound});
+    } catch (err) {
+        console.log(err)
+        res.json({success: true, error: error.message});   
+    }
 } 
 
 
