@@ -10,10 +10,11 @@ const { productRouter } = require('./Router/productRouter');
 
 // App Config
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 4000;
 connectCloudinary()
 
 // Middleware
+// app.use(express.urlencoded());
 app.use(express.json());
 app.use(cors());
 
@@ -31,7 +32,6 @@ app.use('/api/product', productRouter);
 
 
 mongoose.connect(process.env.mongoURL).then(() => {
-    console.log("Server Running...")
     app.listen(port, () => {
         console.log(`Server Running at http://localhost:${port}`);
     });

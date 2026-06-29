@@ -58,20 +58,38 @@ const listProduct = async (req, res, next) => {
         res.json({success: true, productfound:productfound});
     } catch (err) {
         console.log(err)
-        res.json({success: true, error: error.message});   
+        res.json({success: false, message: err.message});   
     }
 } 
 
 
 // function for Removing Product
 const removeProduct = async (req, res, next) => {
+    try {
+        const {id} = req.body;
+        // console.log(id);
+        await product.findByIdAndDelete(id);
 
+        res.json({success: true, message : "Product Removed Successfully"})
+    } catch (err) {
+        console.log(err)
+        res.json({success: false, message: err.message});   
+    }
 }
 
 
 // function for Single Product info
 const singleProduct = async (req, res, next) => {
+    try {
+        const {productId} = req.body;
+        const Product = await product.findById(productId);
 
+        res.json({success : true, Product : Product})
+
+    } catch (err) {
+        console.log(err)
+        res.json({success: false, message: err.message});   
+    }
 }
 
 
