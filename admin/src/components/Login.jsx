@@ -20,9 +20,9 @@ function Login ({setToken}) {
             } else {
                 toast.error(response.data.message)
             }
-        } catch (err) {
-            console.log(err);
-            toast.error(err.message);
+        } catch (error) {
+            console.log(error);
+            toast.error(error.message);
         }
     }
 

@@ -10,7 +10,10 @@ import Login from "./components/Login";
 import "react-toastify/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
+// 
 export const backendURL = import.meta.env.VITE_BACKEND_URL;
+export const currency = "$";
+
 
 function App() {
   // Check Local Storage for token

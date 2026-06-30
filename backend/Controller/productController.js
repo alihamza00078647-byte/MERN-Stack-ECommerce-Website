@@ -54,8 +54,8 @@ const addProduct = async (req, res, next) => {
 // function for List Product
 const listProduct = async (req, res, next) => {
     try {
-        const productfound = await product.find({});
-        res.json({success: true, productfound:productfound});
+        const productfound = await product.find();
+        res.json({success: true, product:productfound});
     } catch (err) {
         console.log(err)
         res.json({success: false, message: err.message});   
